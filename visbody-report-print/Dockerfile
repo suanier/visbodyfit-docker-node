@@ -24,3 +24,6 @@ RUN cd /tmp && wget http://ftp.cn.debian.org/debian/pool/main/f/fonts-noto-cjk/f
     wget https://github.com/adobe-fonts/source-sans-pro/releases/download/2.040R-ro%2F1.090R-it/source-sans-pro-2.040R-ro-1.090R-it.zip && \
     unzip source-sans-pro-2.040R-ro-1.090R-it.zip && cd source-sans-pro-2.040R-ro-1.090R-it && mv ./OTF /usr/share/fonts/  && \
     fc-cache -f -v
+
+WORKDIR /app
+CMD [ "yarn","start" ]
