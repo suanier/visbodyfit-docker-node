@@ -1,13 +1,14 @@
 {
     "name": "vfair-wechat-api",
-    "version": "1.0.0",
+    "version": "1.2.6",
     "description": "VF-Air 微信端API",
     "scripts": {
         "start": "ts-node -r tsconfig-paths/register src/server.ts",
         "start:dev": "nodemon",
         "start:debug": "nodemon --config nodemon-debug.json",
         "check": "tslint -p tsconfig.json -c tslint.json",
-        "fix": "tslint -p tsconfig.json -c tslint.json --fix"
+        "fix": "tslint -p tsconfig.json -c tslint.json --fix",
+        "grpc:gen": "./node_modules/.bin/rxjs-grpc -o src/protobufs/grpc-namespaces.ts src/protobufs/*.proto"
     },
     "author": "duanzeyao",
     "license": "MIT",
@@ -27,7 +28,8 @@
         "morgan": "^1.9.1",
         "reflect-metadata": "^0.1.12",
         "rxjs": "^6.3.3",
-        "typescript": "^3.1.2"
+        "typescript": "^3.1.2",
+        "xml2js": "^0.4.23"
     },
     "devDependencies": {
         "@types/graphql": "^14.0.2",
@@ -35,6 +37,7 @@
         "@types/morgan": "^1.7.35",
         "@types/node": "^10.11.7",
         "nodemon": "^1.18.9",
+        "rxjs-grpc": "^0.2.5",
         "ts-node": "^7.0.1",
         "tsconfig-paths": "^3.6.0",
         "tslint": "^5.11.0"
