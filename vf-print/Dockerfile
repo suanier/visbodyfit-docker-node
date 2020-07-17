@@ -4,8 +4,6 @@ FROM node:10-slim
 # 设置时区
 ENV TZ "Asia/Shanghai"
 
-RUN apt-get install -y dpkg unzip lsb-release gnupg2 wget
-
 # 安装指定版本chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
