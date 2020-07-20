@@ -42,11 +42,8 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 RUN npm i -g nrm && \
     nrm use taobao
 
-# 安装Nest CLI用于后续编译
-RUN npm i -g @nestjs/cli
-
-# 安装运行依赖
-RUN npm install --dependencies
+# 安装依赖
+RUN npm install
 
 # 安装依赖包
 RUN rm -rf  package.json yarn.lock
